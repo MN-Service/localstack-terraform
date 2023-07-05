@@ -76,7 +76,7 @@ resource "aws_sns_topic_subscription" "private_http_subscription" {
 }
 
 resource "aws_s3_bucket" "mnservice-bucket" {
-  bucket = "s3"
+  bucket = "s3-1"
 
   tags = {
     Name        = "mnservice-bucket"
