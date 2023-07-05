@@ -56,21 +56,21 @@ resource "aws_dynamodb_table" "mn-service-dev-consumer-events" {
 
 # ######### SNS Topic #########
 
-# resource "aws_sns_topic" "sns_topic" {
-#   name      =   "mn-service-producer-events"
-# }
+resource "aws_sns_topic" "sns_topic" {
+  name      =   "mn-service-producer-events"
+}
 
 # ######### SQS Queue #########
 
-# resource "aws_sqs_queue" "queue" {
-#   name      =   "mn-service-consumer-events"
-# }
+resource "aws_sqs_queue" "queue" {
+  name      =   "mn-service-consumer-events"
+}
 
 # ######### SNS Subscription #########
 
-# resource "aws_sns_topic_subscription" "private_http_subscription" {
-#   topic_arn = aws_sns_topic.sns_topic.arn   
-#   protocol  = "sqs"
-#   endpoint  = aws_sqs_queue.queue.arn 
-#   endpoint_auto_confirms = true
-# }
+resource "aws_sns_topic_subscription" "private_http_subscription" {
+  topic_arn = aws_sns_topic.sns_topic.arn   
+  protocol  = "sqs"
+  endpoint  = aws_sqs_queue.queue.arn 
+  endpoint_auto_confirms = true
+}
