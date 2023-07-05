@@ -6,8 +6,8 @@ variable "endpoint_url" {
 
 provider "aws" {
   region                      = "eu-central-1"
-  access_key                  = "mn-service"
-  secret_key                  = "mn-service"
+  access_key                  = "mnservice"
+  secret_key                  = "mnservice"
   skip_credentials_validation = true
   skip_metadata_api_check     = true
   skip_requesting_account_id  = true
