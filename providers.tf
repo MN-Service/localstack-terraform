@@ -23,7 +23,7 @@ provider "aws" {
     rds            = var.endpoint_url
     redshift       = var.endpoint_url
     route53        = var.endpoint_url
-    s3             = var.endpoint_url
+    s3             = var.s3_endpoint_url
     secretsmanager = var.endpoint_url
     ses            = var.endpoint_url
     sns            = var.endpoint_url
