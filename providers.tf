@@ -5,7 +5,7 @@ provider "aws" {
   skip_credentials_validation = true
   skip_metadata_api_check     = true
   skip_requesting_account_id  = true
-
+  s3_use_path_style           = true
 
   endpoints {
     apigateway     = var.endpoint_url
@@ -23,7 +23,7 @@ provider "aws" {
     rds            = var.endpoint_url
     redshift       = var.endpoint_url
     route53        = var.endpoint_url
-    s3             = var.s3_endpoint_url
+    s3             = var.endpoint_url
     secretsmanager = var.endpoint_url
     ses            = var.endpoint_url
     sns            = var.endpoint_url
